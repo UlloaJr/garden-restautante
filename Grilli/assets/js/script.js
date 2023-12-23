@@ -79,7 +79,7 @@ window.addEventListener("scroll", function () {
  */
 const heroSlider = document.querySelector("[data-hero-slider]");
 const heroSliderItems = document.querySelectorAll("[data-hero-slider-item]");
-const heroSliderPreBtn = document.querySelector("[data-prev-btn]");
+const heroSliderPrevBtn = document.querySelector("[data-prev-btn]");
 const heroSliderNextBtn = document.querySelector("[data-next-btn]");
 
 let currentSlidePos = 0;
@@ -88,7 +88,7 @@ let lastActiveSliderItem = heroSliderItems[0];
 const updateSliderPos = function () {
     lastActiveSliderItem.classList.remove("active");
     heroSliderItems[currentSlidePos].classList.add("active");
-    lastActiveSliderItem = heroSliderItems[currentSlidesPos];
+    lastActiveSliderItem = heroSliderItems[currentSlidePos];
 }
 
 const slideNext = function () {
@@ -116,5 +116,21 @@ const slidePrev = function () {
 heroSliderPrevBtn.addEventListener("click", slidePrev);
 
 /**
- * auto slide / PAREI AQUI MIN 1:35:44 
+ * auto slide 
  */
+
+let autoSlideInterval;
+
+const autoSlide = function () {
+    autoSlideInterval = setInterval(function () {
+        slideNext();
+    }, 7000);
+}
+
+addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function () {
+    clearInterval(autoSlideInterval);
+});
+
+addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
+
+window.addEventListener("load", autoSlide); /* PAREI AQUI MIN 1:30:58 */
