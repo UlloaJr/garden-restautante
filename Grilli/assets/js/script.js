@@ -127,10 +127,10 @@ const autoSlide = function () {
     }, 7000);
 }
 
-addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function () {
+addEventListener([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function () {
     clearInterval(autoSlideInterval);
 });
 
-addEventOnElements([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
+addEventListener([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
 
-window.addEventListener("load", autoSlide); /* PAREI AQUI MIN 1:30:58 */
+window.addEventListener("load", autoSlide); /* PAREI AQUI MIN 1:37:36 */
