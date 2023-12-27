@@ -133,4 +133,4 @@ addEventListener([heroSliderNextBtn, heroSliderPrevBtn], "mouseover", function (
 
 addEventListener([heroSliderNextBtn, heroSliderPrevBtn], "mouseout", autoSlide);
 
-window.addEventListener("load", autoSlide); /* PAREI AQUI MIN 1:37:36 */
+window.addEventListener("load", autoSlide); 
