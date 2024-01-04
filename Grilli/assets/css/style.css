@@ -968,7 +968,17 @@ body.nav-active { overflow: hidden; }
   #MENU
 \*-----------------------------------*/
 
-/* -- PAREI AQUI MIN 2:23:47 */
+.menu .section-title { margin-block-end: 40px; }
+
+.menu .grid-list { margin-block-end: 50px; }
+
+.menu-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+/* PAREI AQUI MIN 2:24:29 */
+
 
 
 
