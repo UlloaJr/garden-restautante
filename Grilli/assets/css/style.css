@@ -1267,29 +1267,230 @@ textarea.input-field {
 
 .event-card .card-banner .img-cover { transition: var(--transition-2); }
 
-.event-card:is(hover, :focus-within) .img-cover { transform: scale(.05); }
+.event-card:is(:hover, :focus-within) .img-cover { transform: scale(1.05); }
 
-/* PAREI AQUI MIN 3:15:01 */
-
-
+.event .btn {
+  margin-inline: auto;
+  margin-block-start: 40px;
+}
 
 
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
 
+.footer-top { margin-block-end: 70px; }
 
+.footer-brand {
+  position: relative;
+  padding: 50px 40px;
+  background: var(--smoky-black-1) url("../images/footer-form-bg.png");
+  background-position: center top;
+  background-repeat: repeat;
+}
 
+.footer-brand::before,
+.footer-brand::after {
+  top: 0;
+  width: 15px;
+  height: 100%;
+  background-image: url("../images/footer-form-pattern.svg");
+}
+
+.footer-brand::before { left: 0;}
+
+.footer-brand::after { right: 0;}
+
+.footer-brand .logo {
+  max-width: max-content;
+  margin-inline: auto;
+  margin-block-end: 40px;
+}
+
+.footer-brand :is(.body-4, .label-1) {
+  color: var(--quick-silver);
+  line-height: var(--lineHeight-3);
+}
+
+.footer-brand .contact-link {
+  margin-block: 6px;
+  transition: var(--transition-1);
+}
+
+.footer-brand .contact-link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
+
+.footer-brand .wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-block: 40px 25px;
+}
+
+.footer-brand .separator { animation: rotate360 15s linear infinite; }
+
+.footer-brand .label-1 { margin-block-end: 30px; }
+
+.footer-brand .label-1 .span {
+  display: inline;
+  color: var(--white);
+}
+
+.footer-brand .icon-wrapper .input-field { cursor: text; }
+
+.footer-brand .btn { min-width: 100%; }
+
+.footer-list {
+  display: grid;
+  gap: 20px;
+}
+
+.footer-link {
+  color: var(--quick-silver);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letterSpacing-4);
+  margin-inline: auto;
+  transition: var(--transition-1);
+}
+
+.footer-link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
+
+.copyright {
+  color: var(--quick-silver);
+  line-height: var(--lineHeight-3);
+}
+
+.copyright .link {
+  display: inline;
+  color: var(--gold-crayola);
+  text-decoration: underline;
+}
 
 
 /*-----------------------------------*\
   #BACK TO TOP
 \*-----------------------------------*/
 
+.back-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--gold-crayola);
+  color: var(--smoky-black-1);
+  font-size: 22px;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-circle);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition-1);
+  opacity: 0;
+  visibility: 4;
+  z-index: 4;
+}
 
+.back-top-btn:is(:hover, :focus-visible) {
+  background-color: var(--white);
+  color: var(--gold-crayola);
+}
 
-
+.back-top-btn.active {
+  opacity: 1;
+  visibility: visible;
+}
 
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+/**
+ * responsive for large than 575px screen
+ */
+
+ @media (min-width: 575px) {
+  /**
+   * CUSTOM PROPERTY
+   */
+
+   :root {
+
+    /**
+    * typography
+    */
+
+    --fontSize-body-2: 2rem;
+   }
+
+
+   /**
+   * REUSED STYLE
+   */
+
+   :is(.service, .about) .section-text {
+    max-width: 420px;
+    margin-inline: auto;
+   }
+
+   .contact-number { --fontSize-body-1: 3rem; }
+
+
+   /**
+   * TOP BAR
+   */
+
+   .topbar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-block: 10px;
+    border-block-end: 1px solid var(--white-alpha-20);
+    z-index: 4;
+    transition: var(--transition-1);
+   }
+
+   .topbar:has(~ .header.active) { transform: translateY(-100%); }
+
+   .topbar-item:not(.link),
+   .topbar .separator { display: none; }
+
+   .topbar .container,
+   .topbar-item {
+    display: flex;
+    align-items: center;
+   }
+
+   .topbar .container {
+    justify-content: center;
+    gap: 30px;
+   }
+
+   .topbar-item { gap: 6px; }
+
+   .topbar-item ion-icon { --ionicon-stroke-width: 60px; }
+
+   .topbar-item .span { font-size: var(--fontSize-label-1);}
+
+   .topbar .link { transition: var(--transition-1); }
+
+   .topbar .link:is(:hover, :focus-visible) { color: var(--gold-crayola); }
+
+
+   /**
+   * HEADER
+   */
+
+   .header { top: 51px; }
+
+   .header.active { top: 0; }
+
+   .header .btn {
+    display: block;
+    margin-inline-start: auto; 
+   }
+   /* PAREI AQUI MIN 3:44:07 */
+
+
+ }
