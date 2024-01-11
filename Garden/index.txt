@@ -1,6 +1,6 @@
-Grilli - Amazing & Delicious Food
+Garden - Comida Incrível e Deliciosa
 
-This is a Restaurant html template made by codewithsadee
+Site desenvolvido para Garden Sushi by @Zion
 
 
 
